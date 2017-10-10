@@ -2,9 +2,19 @@ import numpy as np
 from sklearn import preprocessing, cross_validation, neighbors
 import pandas as pd
 import pickle
+import random
 
 # Read in data into Dataframe
 df = pd.read_csv("data/...")
+
+# Reading in random sub sample of a large dataset (no headers)
+# Desired random sample_size = 1000
+sample_size = 1000
+filename = "data/..."
+size = sum(for line in open(filename)
+skip = sorted(random.sample(xrange(n),n-s))
+df = pd.read_csv(filename,skiprows=skip)
+
 
 # Replace missing values with outliers
 df.replace('?', -99999, inplace = True)
